@@ -3,7 +3,7 @@ package backend;
 /**
  * Created by emma on 2017-02-21.
  */
-public class Test {
+public class Main {
     public static void main (String [] args){
         System.out.print("heejhej");
     }
