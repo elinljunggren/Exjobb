@@ -1,5 +1,5 @@
 {
-  "name": "angular-quickstart",
+  "name": "envac_app",
   "version": "1.0.0",
   "scripts": {
     "start": "npm run lite",
