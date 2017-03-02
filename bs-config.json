@@ -1,7 +1,0 @@
-{
-  "server": {
-    "baseDir": "./client",
-    "routes": {
-      "/node_modules": "node_modules"    }
-  }
-}

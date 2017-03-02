@@ -2,8 +2,7 @@
   "name": "envac_app",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm run lite",
-    "lite": "lite-server"
+    "start": "open http://localhost:3000 & node server/index.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -17,17 +16,12 @@
     "@angular/router": "~3.4.0",
     "@angular/upgrade": "~2.4.0",
     "angular-in-memory-web-api": "~0.2.4",
+    "body-parser": "^1.16.1",
     "core-js": "^2.4.1",
     "rxjs": "5.0.1",
-    "zone.js": "^0.7.4",
-    "body-parser": "^1.16.1",
-    "ejs": "^2.5.6",
     "express": "^4.14.1",
-    "mysql": "^2.13.0"
-
-  },
-  "devDependencies": {
-    "concurrently": "^3.0.0",
-    "lite-server": "^2.2.2"
+    "mysql": "^2.13.0",
+    "serve-static": "^1.12.0",
+    "zone.js": "^0.7.4"
   }
 }

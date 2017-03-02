@@ -5,6 +5,7 @@ var connection;
 var GET_CUSTOMER = "SELECT customer FROM Tags WHERE rfid = ?";
 var GET_TAGS = "SELECT rfid FROM Tags WHERE customer = ?";
 var GET_DISPOSALS = "SELECT * FROM Disposals WHERE customerId = ?";
+var GET_WEIGHT_INLETS = "select distinct inletAddress from Disposals where weight != -1 order by inletAddress";
 
 function open() {
   connection = mysql.createConnection({
@@ -21,40 +22,39 @@ function close() {
 }
 
 function getCustomer(rfid, callback) {
-  connection.query(GET_CUSTOMER, rfid, function(err, rows, fields) {
+  connection.query(GET_CUSTOMER, [rfid], function(err, rows, fields) {
     if (!err) {
-      console.log('The solution is: ', JSON.parse(rows[0].customer));
-      //var binary = JSON.parse(rows[0].customer);
-      //callback(binary);
+      callback(rows[0].customer);
     } else {
       console.log('Error while performing Query.');
-      //callback();
     }
   });
 };
 
 function getTags(customer, callback) {
-  connection.query(GET_TAGS, customer, function(err, rows, fields) {
+  connection.query(GET_TAGS, [customer], function(err, rows, fields) {
     if (!err) {
-      console.log('The solution is: ', rows);
-      //var binary = JSON.parse(rows[0].customer);
-      //callback(binary);
+      callback(rows);
     } else {
       console.log('Error while performing Query.');
-      //callback();
     }
   });
 };
 
 function getDisposals(customer, callback) {
-  connection.query(GET_DISPOSALS, customer, function(err, rows, fields) {
+  connection.query(GET_DISPOSALS, [customer], function(err, rows, fields) {
     if (!err) {
-      console.log('Disposals for 2082: ', rows);
-      //var binary = JSON.parse(rows[0].customer);
-      //callback(binary);
+      callback(rows);
     } else {
       console.log('Error while performing Query.');
-      //callback();
     }
   });
 };
+
+module.exports = {
+  open,
+  close,
+  getCustomer,
+  getTags,
+  getDisposals
+}
