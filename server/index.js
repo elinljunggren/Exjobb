@@ -21,4 +21,22 @@ app.get('/customer/:rfid', (req, res) => {
   })
 })
 
+app.get('/tags/:customer', (req, res) => {
+  let customer = req.params.customer
+  db.open()
+  db.getTags(customer, (tags) => {
+    res.send(tags)
+    db.close()
+  })
+})
+
+app.get('/disposals/:customer', (req, res) => {
+  let customer = req.params.customer
+  db.open()
+  db.getDisposals(customer, (disposals) => {
+    res.send(disposals)
+    db.close()
+  })
+})
+
 app.listen(3000, console.log.bind(console, 'Server is running'))

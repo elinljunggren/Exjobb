@@ -34,7 +34,7 @@ function getCustomer(rfid, callback) {
 function getTags(customer, callback) {
   connection.query(GET_TAGS, [customer], function(err, rows, fields) {
     if (!err) {
-      callback(rows);
+      callback(JSON.stringify(rows));
     } else {
       console.log('Error while performing Query.');
     }
@@ -44,7 +44,7 @@ function getTags(customer, callback) {
 function getDisposals(customer, callback) {
   connection.query(GET_DISPOSALS, [customer], function(err, rows, fields) {
     if (!err) {
-      callback(rows);
+      callback(JSON.stringify(rows));
     } else {
       console.log('Error while performing Query.');
     }
