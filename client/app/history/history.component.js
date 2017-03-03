@@ -1,8 +1,7 @@
 (function(statistics){
-    statistics.StatisticsComponent =
-        ng.core.Component({
-        })
-        .Class({
-
-        });
+  statistics.StatisticsComponent =
+    ng.core.Component({
+  })
+  .Class({
+  });
 })
