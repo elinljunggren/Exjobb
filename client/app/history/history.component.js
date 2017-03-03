@@ -1,7 +1,10 @@
 (function(statistics){
   statistics.StatisticsComponent =
-    ng.core.Component({
-  })
-  .Class({
-  });
+      ng.core.Component({
+      })
+      .Class({
+          constructor: function() {
+
+          }
+      });
 })
