@@ -3,7 +3,7 @@
     ng.core.NgModule({
       imports: [ ng.platformBrowser.BrowserModule, ng.http.HttpModule, ng.router.RouterModule, app.routing ],
       declarations: [ app.HistoryComponent, app.AppComponent ],
-      bootstrap: [ app.AppComponent ],
+      bootstrap: [ app.AppComponent ]
     })
     .Class({
       constructor: function() {}

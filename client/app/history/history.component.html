@@ -1,6 +1,16 @@
-<!-- Scripts -->
+<!-- Scripts
 <script src="history.js"></script>
-
+-->
 <h2>History</h2>
 
-<button (click)="getDisposals()">Click me!</button>
+<input #box1 (keyup.enter)="getDisposals(box1.value)">
+<input #box2>
+<input #box3>
+<button (click)="getDisposals(box1.value, box2.value, box3.value)">Click me!</button> <br>
+
+<ul class ="disposals">
+  <li *ngFor="let disposal of disposals">
+    {{disposal.date | date: 'yyyy/MM/dd'}}
+    {{disposal.inletAddress}}
+  </li>
+</ul>

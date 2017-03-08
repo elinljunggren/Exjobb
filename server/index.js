@@ -39,4 +39,16 @@ app.get('/disposals/:customer', (req, res) => {
   })
 })
 
+app.get('/disposals/:customer/:startDate/:endDate', (req, res) => {
+  let customer = req.params.customer
+  let startDate = req.params.startDate
+  let endDate = req.params.endDate
+
+  db.open()
+  db.getDisposals(customer, startDate, endDate, (disposals) => {
+    res.send(disposals)
+    db.close()
+  })
+})
+
 app.listen(3000, console.log.bind(console, 'Server is running'))
