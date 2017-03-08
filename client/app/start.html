@@ -3,7 +3,17 @@
 
 <h2>History</h2>
 
-<!--<textfield placeholder="Customer ID" id="customerId" rows="2" cols="40"></textfield> <br> -->
+<!--<textfield placeholder="Customer ID" id="customerId" rows="2" cols="40"></textfield> <br>
+<button (click)="gotoHistory()">View History</button> -->
+
 <input #box (keyup.enter)="getDisposals(box.value)">
-<button (click)="getDisposals(box.value)">Click me!</button>
+<button (click)="getDisposals(box.value)">Click me!</button> <br>
 {{clickMessage}}
+
+<!--
+<nav>
+  <a routerLink="/history" routerLinkActive="active">HistoryLink</a>
+</nav>
+
+<router-outlet></router-outlet>
+-->

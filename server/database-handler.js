@@ -13,43 +13,43 @@ function open() {
     user: 'root',
     password: 'mysql',
     database: 'envac_app'
-  });
-  connection.connect();
+  })
+  connection.connect()
 }
 
 function close() {
-  connection.end();
+  connection.end()
 }
 
 function getCustomer(rfid, callback) {
   connection.query(GET_CUSTOMER, [rfid], function(err, rows, fields) {
     if (!err) {
-      callback(rows[0].customer);
+      callback(rows[0].customer)
     } else {
-      console.log('Error while performing Query.');
+      console.log('Error while performing Query.')
     }
-  });
-};
+  })
+}
 
 function getTags(customer, callback) {
   connection.query(GET_TAGS, [customer], function(err, rows, fields) {
     if (!err) {
-      callback(JSON.stringify(rows));
+      callback(JSON.stringify(rows))
     } else {
-      console.log('Error while performing Query.');
+      console.log('Error while performing Query.')
     }
-  });
-};
+  })
+}
 
 function getDisposals(customer, callback) {
   connection.query(GET_DISPOSALS, [customer], function(err, rows, fields) {
     if (!err) {
-      callback(JSON.stringify(rows));
+      callback(JSON.stringify(rows))
     } else {
-      console.log('Error while performing Query.');
+      console.log('Error while performing Query.')
     }
-  });
-};
+  })
+}
 
 module.exports = {
   open,
