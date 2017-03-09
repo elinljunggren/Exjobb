@@ -15,7 +15,6 @@
       }
     ],
     getDisposals: function(customer) {
-      console.log('hej')
       this._customerService.getDisposals(this._http, customer)
         .subscribe(disposals => this.disposals = disposals)
     },
