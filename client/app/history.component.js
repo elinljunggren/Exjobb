@@ -12,6 +12,7 @@
         this._customerService = customerService
         this._router = router
         this._http = http
+        this.startDate = new Date()
       }
     ],
     getDisposals: function(customer) {
@@ -19,6 +20,7 @@
         .subscribe(disposals => this.disposals = disposals)
     },
     getDisposalsByDate: function(customer, startDate, endDate) {
+      console.log(startDate)
       this._customerService.getDisposalsByDate(this._http, customer, startDate, endDate)
       .subscribe(disposals => this.disposals = disposals)
       //!startDate && !endDate && this._customerService.getDisposals(this._http, customer)
