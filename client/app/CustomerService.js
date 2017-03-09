@@ -7,7 +7,7 @@ class CustomerService {
     return http.get('/disposals/' + id).map(res => res.json())
   }
 
-  getDisposals(http, id, startDate, endDate) {
+  getDisposalsByDate(http, id, startDate, endDate) {
     return http.get('/disposals/' + id + '/' + startDate + '/' + endDate).map(res => res.json())
   }
 }

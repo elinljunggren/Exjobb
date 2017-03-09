@@ -12,8 +12,8 @@ function open() {
   connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '!mySQL12',
-    //password: 'mysql',
+    //password: '!mySQL12',
+    password: 'mysql',
     database: 'envac_app'
   })
   connection.connect()
@@ -53,7 +53,7 @@ function getDisposals(customer, callback) {
   })
 }
 
-function getDisposals(customer, startDate, endDate, callback) {
+function getDisposalsByDate(customer, startDate, endDate, callback) {
   connection.query(GET_DISPOSALS_BY_DATE, [customer, startDate, endDate], function(err, rows, fields) {
     if (!err) {
       callback(JSON.stringify(rows))
@@ -68,5 +68,6 @@ module.exports = {
   close,
   getCustomer,
   getTags,
-  getDisposals
+  getDisposals,
+  getDisposalsByDate
 }

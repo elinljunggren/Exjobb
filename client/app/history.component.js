@@ -14,8 +14,13 @@
         this._http = http
       }
     ],
-    getDisposals: function(customer, startDate, endDate) {
-      this._customerService.getDisposals(this._http, customer, '2016-02-23 06:26:18', '2016-11-21 11:48:45')
+    getDisposals: function(customer) {
+      console.log('hej')
+      this._customerService.getDisposals(this._http, customer)
+        .subscribe(disposals => this.disposals = disposals)
+    },
+    getDisposalsByDate: function(customer, startDate, endDate) {
+      this._customerService.getDisposalsByDate(this._http, customer, startDate, endDate)
       .subscribe(disposals => this.disposals = disposals)
       //!startDate && !endDate && this._customerService.getDisposals(this._http, customer)
       //.subscribe(disposals => this.disposals = disposals)

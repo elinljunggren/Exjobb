@@ -45,7 +45,7 @@ app.get('/disposals/:customer/:startDate/:endDate', (req, res) => {
   let endDate = req.params.endDate
 
   db.open()
-  db.getDisposals(customer, startDate, endDate, (disposals) => {
+  db.getDisposalsByDate(customer, startDate, endDate, (disposals) => {
     res.send(disposals)
     db.close()
   })
