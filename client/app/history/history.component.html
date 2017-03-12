@@ -1,16 +1,15 @@
-<!-- Scripts
-[(ngModel)]="startDate"
--->
-<h2>History</h2>
+<div class="jumbotron vertical-center">
+  <h2>History</h2>
 
-<input #box1 (keyup.enter)="getDisposals(box1.value)">
-<input #startDate type="date">
-<input #endDate type="date">
-<button (click)="getDisposalsByDate(box1.value, startDate.value, endDate.value)">Click me!</button> <br>
+  <input #box1 (keyup.enter)="getDisposals(box1.value)">
+  <input #startDate type="date" [ngModel]="startdate| date: 'yyyy-MM-dd'">
+  <input #endDate type="date" [ngModel]="enddate| date: 'yyyy-MM-dd'">
+  <button (click)="getDisposalsByDate(box1.value, startDate.value, endDate.value)">Click me!</button> <br>
 
-<ul class ="disposals">
-  <li *ngFor="let disposal of disposals">
-    {{disposal.date | date: 'yyyy-MM-dd'}}
-    {{disposal.inletAddress}}
-  </li>
-</ul>
+  <ul class ="disposals">
+    <li *ngFor="let disposal of disposals">
+      {{disposal.date | date: 'yyyy-MM-dd'}}
+      {{disposal.inletAddress}}
+    </li>
+  </ul>
+</div>

@@ -4,7 +4,6 @@
     selector: 'my-history',
     templateUrl: './app/history/history.component.html',
     providers: [ CustomerService ]
-  //  directives: [ng.router.ROUTER_DIRECTIVES]
   })
   .Class({
     constructor: [
@@ -12,7 +11,9 @@
         this._customerService = customerService
         this._router = router
         this._http = http
-        this.startDate = new Date()
+        this.enddate = new Date()
+        this.startdate = new Date()
+        this.startdate.setMonth(this.enddate.getMonth() - 6)
       }
     ],
     getDisposals: function(customer) {
@@ -20,11 +21,8 @@
         .subscribe(disposals => this.disposals = disposals)
     },
     getDisposalsByDate: function(customer, startDate, endDate) {
-      console.log(startDate)
       this._customerService.getDisposalsByDate(this._http, customer, startDate, endDate)
       .subscribe(disposals => this.disposals = disposals)
-      //!startDate && !endDate && this._customerService.getDisposals(this._http, customer)
-      //.subscribe(disposals => this.disposals = disposals)
     },
     gotoHistory: function() {
       this._router.navigate(['/history']);
