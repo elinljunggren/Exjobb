@@ -12,8 +12,8 @@ function open() {
   connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '!mySQL12',
-    //password: 'mysql',
+    //password: '!mySQL12',
+    password: 'mysql',
     database: 'envac_app'
   })
   connection.connect()

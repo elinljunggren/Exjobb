@@ -8,8 +8,8 @@ const express = require('express'),
 app.use(bodyParser.json())
 
 const baseDir = path.dirname(__dirname)
-app.use('/node_modules', serveStatic(path.join(baseDir, 'node_modules')))
-app.use('/', serveStatic(path.join(baseDir, 'client')))
+app.use('/node_modules', serveStatic(path.join(baseDir, '../node_modules')))
+app.use('/', serveStatic(baseDir))
 
 // http://localhost:3000/customer/00-00-00-00-00
 app.get('/customer/:rfid', (req, res) => {
