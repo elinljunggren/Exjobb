@@ -10,11 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var start_component_1 = require('./start/start.component');
+var area_component_1 = require('./area/area.component');
+var account_component_1 = require('./account/account.component');
 var history_component_1 = require('./history/history.component');
+var top_list_component_1 = require('./top-list/top-list.component');
 var not_found_component_1 = require('./not-found.component');
 var routes = [
-    { path: '', redirectTo: '/history', pathMatch: 'full' },
+    { path: '', redirectTo: '/start', pathMatch: 'full' },
+    { path: 'start', component: start_component_1.StartComponent },
+    { path: 'area', component: area_component_1.AreaComponent },
+    { path: 'account', component: account_component_1.AccountComponent },
     { path: 'history', component: history_component_1.HistoryComponent },
+    { path: 'top-list', component: top_list_component_1.TopListComponent },
     { path: '**', component: not_found_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = (function () {

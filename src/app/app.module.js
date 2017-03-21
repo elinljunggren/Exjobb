@@ -15,7 +15,11 @@ var http_1 = require('@angular/http');
 var router_1 = require('@angular/router');
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
+var start_component_1 = require('./start/start.component');
+var area_component_1 = require('./area/area.component');
+var account_component_1 = require('./account/account.component');
 var history_component_1 = require('./history/history.component');
+var top_list_component_1 = require('./top-list/top-list.component');
 var not_found_component_1 = require('./not-found.component');
 var customer_service_1 = require('./customer.service');
 var AppModule = (function () {
@@ -32,7 +36,11 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
+                start_component_1.StartComponent,
+                area_component_1.AreaComponent,
+                account_component_1.AccountComponent,
                 history_component_1.HistoryComponent,
+                top_list_component_1.TopListComponent,
                 not_found_component_1.PageNotFoundComponent
             ],
             providers: [

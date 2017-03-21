@@ -9,18 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'App';
+var customer_service_1 = require('../customer.service');
+var TopListComponent = (function () {
+    function TopListComponent(customerService) {
+        this.customerService = customerService;
     }
-    AppComponent = __decorate([
+    TopListComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <nav>\n      <a routerLink=\"/start\" routerLinkActive=\"active\">Start</a>\n      <a routerLink=\"/area\" routerLinkActive=\"active\">Your Area</a>\n      <a routerLink=\"/account\" routerLinkActive=\"active\">Account</a>\n      <a routerLink=\"/history\" routerLinkActive=\"active\">History</a>\n      <a routerLink=\"/top-list\" routerLinkActive=\"active\">Top List</a>\n    </nav>\n\n    <router-outlet></router-outlet>\n    "
+            selector: 'my-top-list',
+            templateUrl: './app/top-list/top-list.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [customer_service_1.CustomerService])
+    ], TopListComponent);
+    return TopListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TopListComponent = TopListComponent;
+//# sourceMappingURL=top-list.component.js.map
