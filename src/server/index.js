@@ -51,4 +51,8 @@ app.get('/disposals/:customer/:startDate/:endDate', (req, res) => {
   })
 })
 
+app.use((req, res) => {
+  res.sendFile(path.join(baseDir, "index.html"))
+})
+
 app.listen(3000, console.log.bind(console, 'Server is running'))
