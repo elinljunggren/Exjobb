@@ -16,17 +16,17 @@ var AppComponent = (function () {
     /* Set the width of the side navigation to 250px */
     AppComponent.prototype.openNav = function () {
         document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("my-app").style.marginLeft = "250px";
+        document.getElementById("mainView").style.marginLeft = "250px";
     };
     /* Set the width of the side navigation to 0 */
     AppComponent.prototype.closeNav = function () {
         document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("").style.marginLeft = "0";
+        document.getElementById("mainView").style.marginLeft = "0";
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n  <!--  <nav>-->\n  <div id=\"mySidenav\" class=\"sidenav\">\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\n\n      <a routerLink=\"/start\" routerLinkActive=\"active\">Start</a>\n      <a routerLink=\"/area\" routerLinkActive=\"active\">Your Area</a>\n      <a routerLink=\"/account\" routerLinkActive=\"active\">Account</a>\n      <a routerLink=\"/history\" routerLinkActive=\"active\">History</a>\n      <a routerLink=\"/top-list\" routerLinkActive=\"active\">Top List</a>\n    </div>\n<!--    </nav>-\n    <button (click)=\"openNav()\">open</button>-->\n    <span style=\"font-size:30px;cursor:pointer\" (click)=\"openNav()\">&#9776; open</span>\n\n    <router-outlet></router-outlet>\n    "
+            template: "\n    <h1>{{title}}</h1>\n  <!--  <nav>-->\n  <div id=\"mySidenav\" class=\"sidenav\">\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\n\n      <a routerLink=\"/start\" routerLinkActive=\"active\">Start</a>\n      <a routerLink=\"/area\" routerLinkActive=\"active\">Your Area</a>\n      <a routerLink=\"/account\" routerLinkActive=\"active\">Account</a>\n      <a routerLink=\"/history\" routerLinkActive=\"active\">History</a>\n      <a routerLink=\"/top-list\" routerLinkActive=\"active\">Top List</a>\n    </div>\n<!--    </nav>-\n    <button (click)=\"openNav()\">open</button>-->\n    <span style=\"font-size:30px;cursor:pointer\" (click)=\"openNav()\">&#9776; </span>\n\n    <router-outlet></router-outlet>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

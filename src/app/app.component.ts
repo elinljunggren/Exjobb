@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
     </div>
 <!--    </nav>-
     <button (click)="openNav()">open</button>-->
-    <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; open</span>
+    <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; </span>
 
     <router-outlet></router-outlet>
     `
@@ -27,13 +27,13 @@ export class AppComponent {
   /* Set the width of the side navigation to 250px */
    openNav() {
       document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("my-app").style.marginLeft = "250px";
+      document.getElementById("mainView").style.marginLeft = "250px";
     }
 
   /* Set the width of the side navigation to 0 */
    closeNav() {
       document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("").style.marginLeft = "0";
+      document.getElementById("mainView").style.marginLeft = "0";
     }
 
 }
