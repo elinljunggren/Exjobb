@@ -13,6 +13,7 @@ import { AccountComponent}        from './account/account.component';
 import { HistoryComponent}        from './history/history.component';
 import { TopListComponent}        from './top-list/top-list.component';
 import { PageNotFoundComponent }  from './not-found.component';
+import { NgbModule }              from '@ng-bootstrap/ng-bootstrap';
 
 import { CustomerService }        from './customer.service';
 
@@ -22,7 +23,8 @@ import { CustomerService }        from './customer.service';
     FormsModule,
     HttpModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
 ],
   declarations: [
     AppComponent,

@@ -21,6 +21,7 @@ var account_component_1 = require('./account/account.component');
 var history_component_1 = require('./history/history.component');
 var top_list_component_1 = require('./top-list/top-list.component');
 var not_found_component_1 = require('./not-found.component');
+var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
 var customer_service_1 = require('./customer.service');
 var AppModule = (function () {
     function AppModule() {
@@ -32,7 +33,8 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 router_1.RouterModule,
-                app_routing_module_1.AppRoutingModule
+                app_routing_module_1.AppRoutingModule,
+                ng_bootstrap_1.NgbModule.forRoot()
             ],
             declarations: [
                 app_component_1.AppComponent,
