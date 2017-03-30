@@ -29,7 +29,7 @@
     "angular-in-memory-web-api": "~0.2.4",
     "body-parser": "^1.16.1",
     "bootlint": "^0.14.2",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.0.0-alpha.6",
     "circle-chart": "^1.0.0",
     "core-js": "^2.4.1",
     "express": "^4.14.1",

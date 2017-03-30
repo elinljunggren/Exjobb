@@ -19,6 +19,7 @@ var start_component_1 = require('./start/start.component');
 var area_component_1 = require('./area/area.component');
 var account_component_1 = require('./account/account.component');
 var history_component_1 = require('./history/history.component');
+var graph_component_1 = require('./history/graph.component');
 var top_list_component_1 = require('./top-list/top-list.component');
 var not_found_component_1 = require('./not-found.component');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
@@ -42,6 +43,7 @@ var AppModule = (function () {
                 area_component_1.AreaComponent,
                 account_component_1.AccountComponent,
                 history_component_1.HistoryComponent,
+                graph_component_1.GraphComponent,
                 top_list_component_1.TopListComponent,
                 not_found_component_1.PageNotFoundComponent
             ],

@@ -43,9 +43,18 @@ app.get('/disposals/:customer/:startDate/:endDate', (req, res) => {
   let customer = req.params.customer
   let startDate = req.params.startDate
   let endDate = req.params.endDate
-
   db.open()
   db.getDisposalsByDate(customer, startDate, endDate, (disposals) => {
+    res.send(disposals)
+    db.close()
+  })
+})
+
+app.get('/disposals/:customer/:fraction', (req, res) => {
+  let customer = req.params.customer
+  let fraction = req.params.fraction
+  db.open()
+  db.getDisposalsByFraction(customer, fraction, (disposals) => {
     res.send(disposals)
     db.close()
   })

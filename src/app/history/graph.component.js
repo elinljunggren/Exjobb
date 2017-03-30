@@ -9,39 +9,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
 var customer_service_1 = require('../customer.service');
-var HistoryComponent = (function () {
-    function HistoryComponent(customerService, config) {
+var GraphComponent = (function () {
+    function GraphComponent(customerService) {
         this.customerService = customerService;
         this.disposals = [];
         this.enddate = new Date();
         this.startdate = new Date();
         this.startdate.setMonth(this.enddate.getMonth() - 6);
-        config.justify = 'center';
-        //config.type = 'pills';
-        //var t = document.getElementById("ngbTabset")
-        //t.select('listTab')
+        setTimeout(function () {
+            var container = document.getElementById('visualization');
+            var items = [
+                { x: '2014-06-11', y: 10 },
+                { x: '2014-06-12', y: 25 },
+                { x: '2014-06-13', y: 30 },
+                { x: '2014-06-14', y: 10 },
+                { x: '2014-06-15', y: 15 },
+                { x: '2014-06-16', y: 30 }
+            ];
+            var dataset = new vis.DataSet(items);
+            var options = {
+                start: '2014-06-10',
+                end: '2014-06-18'
+            };
+            var graph2d = new vis.Graph2d(container, dataset, options);
+        });
     }
-    HistoryComponent.prototype.getDisposals = function (customer) {
+    GraphComponent.prototype.getDisposals = function (customer) {
         var _this = this;
         this.customerService.getDisposals(customer)
             .then(function (disposals) { return _this.disposals = disposals; });
     };
-    HistoryComponent.prototype.getDisposalsByDate = function (customer, startDate, endDate) {
+    GraphComponent.prototype.getDisposalsByDate = function (customer, startDate, endDate) {
         var _this = this;
         this.customerService.getDisposalsByDate(customer, startDate, endDate)
             .then(function (disposals) { return _this.disposals = disposals; });
     };
-    HistoryComponent = __decorate([
+    GraphComponent = __decorate([
         core_1.Component({
-            selector: 'my-history',
-            templateUrl: './app/history/history.component.html',
-            providers: [ng_bootstrap_1.NgbTabsetConfig]
+            selector: 'history-graph',
+            templateUrl: './app/history/graph.component.html'
         }), 
-        __metadata('design:paramtypes', [customer_service_1.CustomerService, ng_bootstrap_1.NgbTabsetConfig])
-    ], HistoryComponent);
-    return HistoryComponent;
+        __metadata('design:paramtypes', [customer_service_1.CustomerService])
+    ], GraphComponent);
+    return GraphComponent;
 }());
-exports.HistoryComponent = HistoryComponent;
-//# sourceMappingURL=history.component.js.map
+exports.GraphComponent = GraphComponent;
+//# sourceMappingURL=graph.component.js.map

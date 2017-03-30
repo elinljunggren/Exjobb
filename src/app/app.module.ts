@@ -7,11 +7,12 @@ import { RouterModule, Routes }   from '@angular/router';
 import { AppRoutingModule }       from './app-routing.module';
 
 import { AppComponent }           from './app.component';
-import { StartComponent}          from './start/start.component';
-import { AreaComponent}           from './area/area.component';
-import { AccountComponent}        from './account/account.component';
-import { HistoryComponent}        from './history/history.component';
-import { TopListComponent}        from './top-list/top-list.component';
+import { StartComponent }         from './start/start.component';
+import { AreaComponent }          from './area/area.component';
+import { AccountComponent }       from './account/account.component';
+import { HistoryComponent }       from './history/history.component';
+import { GraphComponent }         from './history/graph.component';
+import { TopListComponent }       from './top-list/top-list.component';
 import { PageNotFoundComponent }  from './not-found.component';
 import { NgbModule }              from '@ng-bootstrap/ng-bootstrap';
 
@@ -32,6 +33,7 @@ import { CustomerService }        from './customer.service';
     AreaComponent,
     AccountComponent,
     HistoryComponent,
+    GraphComponent,
     TopListComponent,
     PageNotFoundComponent
   ],

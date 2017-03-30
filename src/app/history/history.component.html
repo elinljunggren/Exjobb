@@ -1,15 +1,31 @@
-<div class="jumbotron vertical-center">
-  <h2>History</h2>
+<h2>History</h2>
 
+<div id="dataInput">
   <input #box1 (keyup.enter)="getDisposals(box1.value)">
   <input #startDate type="date" [ngModel]="startdate| date: 'yyyy-MM-dd'">
   <input #endDate type="date" [ngModel]="enddate| date: 'yyyy-MM-dd'">
-  <button (click)="getDisposalsByDate(box1.value, startDate.value, endDate.value)">Click me!</button> <br>
-
-  <ul class ="disposals">
-    <li *ngFor="let disposal of disposals">
-      {{disposal.date | date: 'yyyy-MM-dd'}}
-      {{disposal.inletAddress}}
-    </li>
-  </ul>
+  <button id="dataButton" (click)="getDisposalsByDate(box1.value, startDate.value, endDate.value)">Get data</button>
+  <!-- Add for fraction later
+    <input #box2 (keyup.enter)="getDisposals(box2.value)">
+    <button (click)="getDisposalsByFraction(box1.value, box2.value)">Click me for fraction!</button> <br>
+  -->
 </div>
+
+<ngb-tabset id="ngbTabset">
+<ngb-tab title="List" id="listTab">
+  <template ngbTabContent>
+    <ul class ="disposals">
+      <li *ngFor="let disposal of disposals">
+        {{disposal.date | date: 'yyyy-MM-dd'}}
+        {{disposal.inletAddress}}
+        {{disposal.fraction}}
+      </li>
+    </ul>
+  </template>
+</ngb-tab>
+<ngb-tab title="Graph" id="graphTab">
+  <template ngbTabContent>
+    <history-graph></history-graph>
+  </template>
+</ngb-tab>
+</ngb-tabset>

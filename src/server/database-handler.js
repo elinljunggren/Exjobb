@@ -7,13 +7,14 @@ var GET_TAGS = "SELECT rfid FROM Tags WHERE customer = ?"
 var GET_DISPOSALS = "SELECT * FROM Disposals WHERE customerId = ?"
 var GET_WEIGHT_INLETS = "select distinct inletAddress from Disposals where weight != -1 order by inletAddress"
 var GET_DISPOSALS_BY_DATE = "SELECT * FROM Disposals WHERE customerId = ? AND date between ? AND ?"
+var GET_DISPOSALS_BY_FRACTION = "SELECT * FROM Disposals WHERE fraction = ?"
 
 function open() {
   connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    //password: '!mySQL12',
-    password: 'mysql',
+    password: '!mySQL12',
+    //password: 'mysql',
     database: 'envac_app'
   })
   connection.connect()
@@ -62,6 +63,15 @@ function getDisposalsByDate(customer, startDate, endDate, callback) {
     }
   })
 }
+function getDisposalsByFraction(customer, fraction, callback) {
+  connection.query(GET_DISPOSALS_BY_FRACTION, [customer, fraction], function(err, rows, fields) {
+    if (!err) {
+      callback(JSON.stringify(rows))
+    } else {
+      console.log('Error while performing Query!!')
+    }
+  })
+}
 
 module.exports = {
   open,
@@ -69,5 +79,6 @@ module.exports = {
   getCustomer,
   getTags,
   getDisposals,
-  getDisposalsByDate
+  getDisposalsByDate,
+  getDisposalsByFraction
 }
